@@ -7,15 +7,7 @@
   <title>Pizza</title>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <style type="text/css">
-    .brand {
-      background: #333 !important;
-    }
-
-    .brand-text {
-      color: #333 !important;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="grey lighten-4">
