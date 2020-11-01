@@ -3,9 +3,30 @@
 if (isset($_POST['submit'])) {
   // XSS attacks
   //prevent it by using htmlspecialchars()
-  echo htmlspecialchars($_POST['email'])  . '<br/>';
-  echo htmlspecialchars($_POST['title']) . '<br/>';
-  echo htmlspecialchars($_POST['ingredients']) . '<br/>';
+  // echo htmlspecialchars($_POST['email'])  . '<br/>';
+  // echo htmlspecialchars($_POST['title']) . '<br/>';
+  // echo htmlspecialchars($_POST['ingredients']) . '<br/>';
+
+  // empty() to check if its empty input
+  //check email
+  if (empty($_POST['email'])) {
+    echo 'An email is required  <br>';
+  } else {
+    echo htmlspecialchars($_POST['email'])  . '<br/>';
+  }
+  //check title
+  if (empty($_POST['title'])) {
+    echo 'A title is required  <br>';
+  } else {
+    echo htmlspecialchars($_POST['email'])  . '<br/>';
+  }
+
+  //check email
+  if (empty($_POST['ingredients'])) {
+    echo 'ingredients are required  <br>';
+  } else {
+    echo htmlspecialchars($_POST['ingredients'])  . '<br/>';
+  } // end of form check
 }
 
 
