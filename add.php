@@ -12,20 +12,30 @@ if (isset($_POST['submit'])) {
   if (empty($_POST['email'])) {
     echo 'An email is required  <br>';
   } else {
-    echo htmlspecialchars($_POST['email'])  . '<br/>';
+    $email = htmlspecialchars($_POST['email']);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      echo 'Enter a valid email';
+    }
   }
+
   //check title
   if (empty($_POST['title'])) {
     echo 'A title is required  <br>';
   } else {
-    echo htmlspecialchars($_POST['email'])  . '<br/>';
+    $title = htmlspecialchars($_POST['title']);
+    if (!preg_match('/^[a-zA-Z\s]+$/', $title)) {
+      echo 'Title must be letters and spaces only';
+    }
   }
 
   //check email
   if (empty($_POST['ingredients'])) {
     echo 'ingredients are required  <br>';
   } else {
-    echo htmlspecialchars($_POST['ingredients'])  . '<br/>';
+    $ingredients = htmlspecialchars($_POST['ingredients']);
+    if (!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)) {
+      echo 'ingredients must be comma-separated';
+    }
   } // end of form check
 }
 
